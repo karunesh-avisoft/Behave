@@ -19,5 +19,5 @@ def step_continue_from_checkout(context):
 
 
 @then("Verify '{error}' should be displayed")
-def step_verify_last_name_error(context):
-    context.checkout_page.assert_lastname(context.error)
+def step_verify_last_name_error(context, error):
+    context.checkout_page.assert_lastname(error)

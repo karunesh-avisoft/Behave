@@ -7,7 +7,7 @@ def step_click_cart_icon(context):
     context.inventory_page.click_cart_icon()
     context.cart_page = CartPage(context.page)
     
-@then("User navigates to the cart page")
+@then("Verify user navigates to the cart page")
 def step_verify_on_cart(context):
     context.cart_page.verify_cart_open()
 

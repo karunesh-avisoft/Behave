@@ -1,34 +1,35 @@
-<testsuite name="checkout.Checkout Page" tests="2" errors="0" failures="0" skipped="0" time="28.69518" timestamp="2025-12-22T18:12:10.904766" hostname="DESKTOP-SFTALKM"><testcase classname="checkout.Checkout Page" name="Cancel checkout" status="passed" time="14.350754"><system-out>
+<testsuite name="Checkout.Checkout Page" tests="2" errors="0" failures="0" skipped="0" time="25.474555" timestamp="2025-12-23T12:40:38.967543" hostname="DESKTOP-SFTALKM"><testcase classname="Checkout.Checkout Page" name="Verify cancel checkout action" status="passed" time="11.070119"><system-out>
 <![CDATA[
 @scenario.begin
-  Scenario: Cancel checkout
-    Given User login as 'problem' user ... passed in 4.926s
-    Then User navigates to the inventory page ... passed in 0.060s
-    When User adds item 'backpack' to the cart ... passed in 1.209s
-    And User adds item 'Onesie' to the cart ... passed in 1.213s
-    And User clicks on the cart icon ... passed in 1.241s
-    And User proceeds to checkout page ... passed in 1.216s
-    When User fills checkout details with first name:'John', last name:'Problem', and postal code:'12345' ... passed in 3.258s
-    And User clicks Cancel on overview ... passed in 1.214s
-    Then User navigates to the cart page ... passed in 0.008s
-    And The cart badge should show the correct number of items ... passed in 0.006s
+  Scenario: Verify cancel checkout action
+    Given User login as 'problem' user ... passed in 5.015s
+    Then Verify user is on the inventory page ... passed in 0.069s
+    When User adds item 'backpack' to the cart ... passed in 1.184s
+    And User adds item 'Onesie' to the cart ... passed in 1.183s
+    And User clicks on the cart icon ... passed in 1.209s
+    And User clicks on continue button ... passed in 1.198s
+    Then Verify user should be navigated to the checkout page ... passed in 0.007s
+    When User clicks cancel on checkout overview page ... passed in 1.193s
+    Then Verify user navigates to the cart page ... passed in 0.008s
+    And Verify cart badge should show the correct number of items ... passed in 0.005s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="checkout.Checkout Page" name="Error on empty checkout fields" status="passed" time="14.344427"><system-out>
+</system-out></testcase><testcase classname="Checkout.Checkout Page" name="Verify error on empty checkout fields" status="passed" time="14.404435"><system-out>
 <![CDATA[
 @scenario.begin
-  Scenario: Error on empty checkout fields
-    Given User login as 'problem' user ... passed in 4.872s
-    Then User navigates to the inventory page ... passed in 0.060s
-    When User adds item 'backpack' to the cart ... passed in 1.225s
-    And User adds item 'Onesie' to the cart ... passed in 1.215s
-    And User clicks on the cart icon ... passed in 1.257s
-    And User proceeds to checkout page ... passed in 1.216s
-    When User fills checkout details with first name:'John', last name:'Problem', and postal code:'12345' ... passed in 3.256s
-    Then User continue from checkout overview ... passed in 1.232s
-    And Error: Last Name is required should be displayed ... passed in 0.014s
+  Scenario: Verify error on empty checkout fields
+    Given User login as 'problem' user ... passed in 5.043s
+    Then Verify user is on the inventory page ... passed in 0.063s
+    When User adds item 'backpack' to the cart ... passed in 1.218s
+    And User adds item 'Onesie' to the cart ... passed in 1.202s
+    And User clicks on the cart icon ... passed in 1.193s
+    And User clicks on continue button ... passed in 1.215s
+    Then Verify user should be navigated to the checkout page ... passed in 0.006s
+    When User fills checkout details with first name:'John', last name:'Problem', and postal code:'12345' ... passed in 3.252s
+    Then User clicks continue from checkout overview page ... passed in 1.200s
+    And Verify 'Error: Last Name is required' should be displayed ... passed in 0.012s
 
 @scenario.end
 --------------------------------------------------------------------------------

@@ -18,6 +18,7 @@ class LoginPage(BasePage):
     @property
     def user_name(self):
         return self.page.locator(LoginPageLocators.USER_NAME)
+
     @property
     def password(self):
         return self.page.locator(LoginPageLocators.PASSWORD)
@@ -25,6 +26,7 @@ class LoginPage(BasePage):
     @property
     def submit(self):
         return self.page.locator(LoginPageLocators.SUBMIT)
+
     @property
     def error_container(self):
         return self.page.locator(LoginPageLocators.ERROR)
@@ -32,10 +34,10 @@ class LoginPage(BasePage):
     @property
     def cross_btn(self):
         return self.page.locator(LoginPageLocators.CROSS_ERROR)
+
     # ----------Actions----------
     def open(self):
         self.page.goto(TestData.BASE_URL)
-        
 
     def fill_credentials(self, user_key: str):
         logger.info("Filling credentials")
@@ -54,12 +56,10 @@ class LoginPage(BasePage):
         logger.info("Closed error message")
 
     # ----------Assertions----------
-    def assert_username_password(self):
+    def assert_username_password(self, error):
         expect(self.error_container).to_be_visible()
         assert (
-            "Epic sadface: Username is required"
-            or "Epic sadface: Password is required"
-            or "Epic sadface: Username and password do not match any user in this service" in self.error_container.inner_text()
+            error in self.error_container.inner_text()
         ), self.error_container.inner_text()
 
     def assert_locked_out_error(self):
@@ -67,7 +67,7 @@ class LoginPage(BasePage):
         expect(self.error_container).to_contain_text(
             "Epic sadface: Sorry, this user has been locked out."
         )
-        
+
     def verify_login_page(self):
         logger.info("Verifying Login Page")
         expect(self.logo, "'Swag Labs' logo should be visible").to_be_visible()

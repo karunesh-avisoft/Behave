@@ -1,55 +1,27 @@
-<testsuite name="login.User Login" tests="2" errors="1" failures="0" skipped="0" time="9.039608" timestamp="2025-12-22T18:13:04.389904" hostname="DESKTOP-SFTALKM"><testcase classname="login.User Login" name="Successful user login" status="error" time="3.902594"><error type="Error" message="Page.screenshot: Protocol error (Page.snapshotRect): Could not capture snapshot&#10;Call log:&#10;  - taking page screenshot&#10;  - waiting for fonts to load...&#10;  - fonts loaded">
-<![CDATA[
-Failing step: When User enters 'standard' as username ... error in 2.354s
-Location: features/login.feature:5
-Traceback (most recent call last):
-  File "C:\Users\hp\Documents\karunesh\Behave\environment\lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-  File "C:\Users\hp\Documents\karunesh\Behave\environment\lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-  File "features\steps\login_steps.py", line 24, in user_enter_credentials
-    context.login_page.take_screenshot("after_credentials_filled")
-  File "C:\Users\hp\Documents\karunesh\Behave\features\..\pages\base_page.py", line 12, in take_screenshot
-    self.page.screenshot(path=screenshot_path)
-  File "C:\Users\hp\Documents\karunesh\Behave\environment\lib\site-packages\playwright\sync_api\_generated.py", line 9784, in screenshot
-    self._sync(
-  File "C:\Users\hp\Documents\karunesh\Behave\environment\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
-    return task.result()
-  File "C:\Users\hp\Documents\karunesh\Behave\environment\lib\site-packages\playwright\_impl\_page.py", line 817, in screenshot
-    encoded_binary = await self._channel.send(
-  File "C:\Users\hp\Documents\karunesh\Behave\environment\lib\site-packages\playwright\_impl\_connection.py", line 69, in send
-    return await self._connection.wrap_api_call(
-  File "C:\Users\hp\Documents\karunesh\Behave\environment\lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
-    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
-playwright._impl._errors.Error: Page.screenshot: Protocol error (Page.snapshotRect): Could not capture snapshot
-Call log:
-  - taking page screenshot
-  - waiting for fonts to load...
-  - fonts loaded
-
-]]>
-</error><system-out>
+<testsuite name="Login.User Login Page" tests="2" errors="0" failures="0" skipped="0" time="11.09368" timestamp="2025-12-23T12:41:34.939410" hostname="DESKTOP-SFTALKM"><testcase classname="Login.User Login Page" name="Verify successful user login with valid username" status="passed" time="5.658967"><system-out>
 <![CDATA[
 @scenario.begin
-  Scenario: Successful user login
-    Given User on the login page ... passed in 1.549s
-    When User enters 'standard' as username ... error in 2.354s
-    And User submit the login form ... skipped in 0.000s
-    Then User navigates to the inventory page ... skipped in 0.000s
+
+  @valid_login
+  Scenario: Verify successful user login with valid username
+    Given User should be on the login page ... passed in 1.627s
+    When User enters 'standard' as username ... passed in 2.502s
+    And User click on the login button ... passed in 1.472s
+    Then Verify user is on the inventory page ... passed in 0.058s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="login.User Login" name="Unsuccessful user login with incorrect username" status="passed" time="5.137013"><system-out>
+</system-out></testcase><testcase classname="Login.User Login Page" name="Verify unsuccessful user login with incorrect username" status="passed" time="5.434713"><system-out>
 <![CDATA[
 @scenario.begin
 
   @invalid_login
-  Scenario: Unsuccessful user login with incorrect username
-    Given User on the login page ... passed in 1.479s
-    When User enters 'wrongUser' as username ... passed in 2.341s
-    And User submit the login form ... passed in 1.233s
-    Then User should see an error message indicating incorrect/incomplete credentials ... passed in 0.084s
+  Scenario: Verify unsuccessful user login with incorrect username
+    Given User should be on the login page ... passed in 1.503s
+    When User enters 'wrongUser' as username ... passed in 2.422s
+    And User click on the login button ... passed in 1.337s
+    Then Verify user should see error 'Epic sadface: Username and password do not match any user in this service' ... passed in 0.173s
 
 @scenario.end
 --------------------------------------------------------------------------------

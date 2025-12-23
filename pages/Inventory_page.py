@@ -37,18 +37,17 @@ class InventoryPage(BasePage):
         return self.page.locator(InventoryLocators.CART_CONTAINER)
     @property
     def cart(self):
-        return self.page.locator(InventoryLocators.CART)    
+        return self.page.locator(InventoryLocators.CART)
     @property
     def prod_images(self):
         return self.page.locator(InventoryLocators.INVENTORY_IMAGES)
     @property
     def logout(self):
         return self.page.locator(InventoryLocators.LOGOUT)
-    
+
     # ---------- Dynamic Locators ----------
     def add(self, prod_name):
         return self.page.locator(f"{InventoryLocators.ADD_TO_CART}{prod_name}")
-
     def remove(self, prod_name):
         return self.page.locator(f"{InventoryLocators.REMOVE_FROM_CART}{prod_name}")
 
@@ -66,7 +65,7 @@ class InventoryPage(BasePage):
 
     def verify_products(self):
         logger.info("Verifying products on inventory page")
-        products = self.page.locator(L.PRODUCTS)
+        products = self.page.locator(InventoryLocators.PRODUCTS)
         expect(
             products, "Products should be available on inventory page"
         ).to_have_count(6)
@@ -75,9 +74,11 @@ class InventoryPage(BasePage):
         count = products.count()
         logger.info(f"Found {count} products on inventory page")
 
-    def verify_open(self):
+    def verify_inventory_page(self):
         logger.info("Landing to inventory page")
-        expect(self.page, "Should be on inventory page").to_have_url(TestData.INVENTORY_URL)
+        expect(self.page, "Should be on inventory page").to_have_url(
+            TestData.INVENTORY_URL
+        )
         self.verify_products()
         logger.info("On inventory page...")
 
@@ -100,7 +101,6 @@ class InventoryPage(BasePage):
         dialog_handler(self.page)  # dialog handler
         self.filter.select_option(value=value)
         logger.info(f"Applied sort: {value}")
-        
 
     # Adding and removing items from cart
     def add_to_cart(self, item_name):
@@ -155,6 +155,7 @@ class InventoryPage(BasePage):
         self.logout.click()
 
     # ---------- Assertions ----------
+    
     def assert_add_to_cart(self):
         assert self.cart_badge.text_content() == str(
             self.cart_count
