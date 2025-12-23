@@ -1,0 +1,19 @@
+<testsuite name="purchase_order.Successfull Purchase Order Flow" tests="1" errors="0" failures="0" skipped="0" time="15.528096" timestamp="2025-12-22T18:13:20.134668" hostname="DESKTOP-SFTALKM"><testcase classname="purchase_order.Successfull Purchase Order Flow" name="Successful completion of purchase order" status="passed" time="15.528096"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Successful completion of purchase order
+    Given User login as 'standard' user ... passed in 5.025s
+    Then User navigates to the inventory page ... passed in 0.058s
+    When User adds item 'backpack' to the cart ... passed in 1.197s
+    And User adds item 'fleece jacket' to the cart ... passed in 1.185s
+    And User clicks on the cart icon ... passed in 1.198s
+    And User proceeds to checkout page ... passed in 1.229s
+    And User fills checkout details with first name:'John', last name:'Doe', and postal code:'12345' ... passed in 3.189s
+    Then User continue from checkout overview ... passed in 1.216s
+    When User verifies total amount as well as finishes the order ... passed in 1.224s
+    Then User should see the order confirmation page with message Thank you for your order! ... passed in 0.007s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

@@ -1,0 +1,28 @@
+# Byte-compiled 
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# Outputs and caches 
+output/
+pretty.output
+progress.output
+
+# Playwright-specific
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# Other common Python ignores
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
