@@ -1,5 +1,4 @@
-# Behave
-# Selenium BDD Automation Framework with Behave
+# Playwright BDD Automation Framework with Behave
 
 This repository contains a Behavior-Driven Development (BDD) test automation framework using **Python**, **Behave** (a Cucumber-like BDD framework for Python), and **Selenium WebDriver** for browser automation.
 

@@ -1,35 +1,35 @@
-<testsuite name="Checkout.Checkout Page" tests="2" errors="0" failures="0" skipped="0" time="25.474555" timestamp="2025-12-23T12:40:38.967543" hostname="DESKTOP-SFTALKM"><testcase classname="Checkout.Checkout Page" name="Verify cancel checkout action" status="passed" time="11.070119"><system-out>
+<testsuite name="Checkout.Checkout Page" tests="2" errors="0" failures="0" skipped="0" time="25.799311" timestamp="2025-12-23T13:58:01.004113" hostname="DESKTOP-SFTALKM"><testcase classname="Checkout.Checkout Page" name="Verify cancel checkout action" status="passed" time="11.267075"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Verify cancel checkout action
-    Given User login as 'problem' user ... passed in 5.015s
-    Then Verify user is on the inventory page ... passed in 0.069s
-    When User adds item 'backpack' to the cart ... passed in 1.184s
-    And User adds item 'Onesie' to the cart ... passed in 1.183s
-    And User clicks on the cart icon ... passed in 1.209s
-    And User clicks on continue button ... passed in 1.198s
-    Then Verify user should be navigated to the checkout page ... passed in 0.007s
-    When User clicks cancel on checkout overview page ... passed in 1.193s
+    Given User login as 'problem' user ... passed in 5.160s
+    Then Verify user is on the inventory page ... passed in 0.066s
+    When User adds item 'backpack' to the cart ... passed in 1.205s
+    And User adds item 'Onesie' to the cart ... passed in 1.199s
+    And User clicks on the cart icon ... passed in 1.195s
+    And User clicks on continue button ... passed in 1.197s
+    Then Verify user should be navigated to the checkout page ... passed in 0.006s
+    When User clicks cancel on checkout overview page ... passed in 1.225s
     Then Verify user navigates to the cart page ... passed in 0.008s
-    And Verify cart badge should show the correct number of items ... passed in 0.005s
+    And Verify cart badge should show the correct number of items ... passed in 0.006s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="Checkout.Checkout Page" name="Verify error on empty checkout fields" status="passed" time="14.404435"><system-out>
+</system-out></testcase><testcase classname="Checkout.Checkout Page" name="Verify error on empty checkout fields" status="passed" time="14.532236"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Verify error on empty checkout fields
-    Given User login as 'problem' user ... passed in 5.043s
+    Given User login as 'problem' user ... passed in 5.147s
     Then Verify user is on the inventory page ... passed in 0.063s
-    When User adds item 'backpack' to the cart ... passed in 1.218s
-    And User adds item 'Onesie' to the cart ... passed in 1.202s
-    And User clicks on the cart icon ... passed in 1.193s
-    And User clicks on continue button ... passed in 1.215s
-    Then Verify user should be navigated to the checkout page ... passed in 0.006s
-    When User fills checkout details with first name:'John', last name:'Problem', and postal code:'12345' ... passed in 3.252s
-    Then User clicks continue from checkout overview page ... passed in 1.200s
-    And Verify 'Error: Last Name is required' should be displayed ... passed in 0.012s
+    When User adds item 'backpack' to the cart ... passed in 1.219s
+    And User adds item 'Onesie' to the cart ... passed in 1.217s
+    And User clicks on the cart icon ... passed in 1.199s
+    And User clicks on continue button ... passed in 1.228s
+    Then Verify user should be navigated to the checkout page ... passed in 0.005s
+    When User fills checkout details with first name:'John', last name:'Problem', and postal code:'12345' ... passed in 3.222s
+    Then User clicks continue from checkout overview page ... passed in 1.218s
+    And Verify 'Error: Last Name is required' should be displayed ... passed in 0.014s
 
 @scenario.end
 --------------------------------------------------------------------------------

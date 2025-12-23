@@ -1,94 +1,41 @@
-<testsuite name="Cart.Cart Management" tests="3" errors="1" failures="0" skipped="0" time="51.441637" timestamp="2025-12-23T12:40:13.024492" hostname="DESKTOP-SFTALKM"><testcase classname="Cart.Cart Management" name="Verify cart updates after adding items" status="passed" time="6.726195"><system-out>
+<testsuite name="Cart.Cart Management" tests="3" errors="0" failures="0" skipped="0" time="26.016436" timestamp="2025-12-23T13:57:34.601405" hostname="DESKTOP-SFTALKM"><testcase classname="Cart.Cart Management" name="Verify cart updates after adding items" status="passed" time="6.884536"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Verify cart updates after adding items
-    Given User login as 'standard' user ... passed in 5.462s
+    Given User login as 'standard' user ... passed in 5.587s
     Then Verify user is on the inventory page ... passed in 0.070s
-    When User adds item 'bolt t-shirt' to the cart ... passed in 1.187s
-    Then Verify cart badge should show the correct number of items ... passed in 0.007s
+    When User adds item 'bolt t-shirt' to the cart ... passed in 1.221s
+    Then Verify cart badge should show the correct number of items ... passed in 0.006s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="Cart.Cart Management" name="Verify cart updates after removing items" status="error" time="34.855621"><error type="TimeoutError" message="Locator.click: Timeout 30000ms exceeded.&#10;Call log:&#10;  - waiting for locator(&quot;#login-button&quot;)&#10;    - locator resolved to &lt;input type=&quot;submit&quot; value=&quot;Login&quot; id=&quot;login-button&quot; name=&quot;login-button&quot; data-test=&quot;login-button&quot; class=&quot;submit-button btn_action&quot;/&gt;&#10;  - attempting click action&#10;    2 × waiting for element to be visible, enabled and stable&#10;      - element is visible, enabled and stable&#10;      - scrolling into view if needed&#10;      - done scrolling&#10;      - element is outside of the viewport&#10;    - retrying click action&#10;    - waiting 20ms&#10;    2 × waiting for element to be visible, enabled and stable&#10;      - element is visible, enabled and stable&#10;      - scrolling into view if needed&#10;      - done scrolling&#10;      - element is outside of the viewport&#10;    - retrying click action&#10;      - waiting 100ms&#10;    43 × waiting for element to be visible, enabled and stable&#10;       - element is visible, enabled and stable&#10;       - scrolling into view if needed&#10;       - done scrolling&#10;       - element is outside of the viewport&#10;     - retrying click action&#10;       - waiting 500ms">
-<![CDATA[
-Failing step: Given User login as 'standard' user ... error in 34.856s
-Location: features/Cart.feature:4
-Traceback (most recent call last):
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-  File "features\steps\login_steps.py", line 11, in step_user_login
-    context.login_page.click_login()
-  File "C:\Users\hp\Documents\karunesh\Behave\features\..\pages\LoginPage.py", line 52, in click_login
-    self.submit.click()
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 15573, in click
-    self._sync(
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
-    return task.result()
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\playwright\_impl\_locator.py", line 160, in click
-    return await self._frame.click(self._selector, strict=True, **params)
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\playwright\_impl\_frame.py", line 549, in click
-    await self._channel.send("click", self._timeout, locals_to_params(locals()))
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\playwright\_impl\_connection.py", line 69, in send
-    return await self._connection.wrap_api_call(
-  File "C:\Users\hp\Documents\karunesh\Playwright\.venv\lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
-    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
-playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
-Call log:
-  - waiting for locator("#login-button")
-    - locator resolved to <input type="submit" value="Login" id="login-button" name="login-button" data-test="login-button" class="submit-button btn_action"/>
-  - attempting click action
-    2 × waiting for element to be visible, enabled and stable
-      - element is visible, enabled and stable
-      - scrolling into view if needed
-      - done scrolling
-      - element is outside of the viewport
-    - retrying click action
-    - waiting 20ms
-    2 × waiting for element to be visible, enabled and stable
-      - element is visible, enabled and stable
-      - scrolling into view if needed
-      - done scrolling
-      - element is outside of the viewport
-    - retrying click action
-      - waiting 100ms
-    43 × waiting for element to be visible, enabled and stable
-       - element is visible, enabled and stable
-       - scrolling into view if needed
-       - done scrolling
-       - element is outside of the viewport
-     - retrying click action
-       - waiting 500ms
-
-]]>
-</error><system-out>
+</system-out></testcase><testcase classname="Cart.Cart Management" name="Verify cart updates after removing items" status="passed" time="8.896425"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Verify cart updates after removing items
-    Given User login as 'standard' user ... error in 34.856s
-    Then Verify user is on the inventory page ... skipped in 0.000s
-    When User adds item 'bike light' to the cart ... skipped in 0.000s
-    And User adds item 'bolt t-shirt' to the cart ... skipped in 0.000s
-    And User removes item 'bike light' from the cart ... skipped in 0.000s
-    Then Verify cart badge should show the correct number of items ... skipped in 0.000s
+    Given User login as 'standard' user ... passed in 5.239s
+    Then Verify user is on the inventory page ... passed in 0.064s
+    When User adds item 'bike light' to the cart ... passed in 1.188s
+    And User adds item 'bolt t-shirt' to the cart ... passed in 1.198s
+    And User removes item 'bike light' from the cart ... passed in 1.201s
+    Then Verify cart badge should show the correct number of items ... passed in 0.006s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="Cart.Cart Management" name="Verify items and navigation to checkout page from cart" status="passed" time="9.859822"><system-out>
+</system-out></testcase><testcase classname="Cart.Cart Management" name="Verify items and navigation to checkout page from cart" status="passed" time="10.235475"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Verify items and navigation to checkout page from cart
-    Given User login as 'standard' user ... passed in 5.053s
-    Then Verify user is on the inventory page ... passed in 0.062s
-    When User adds item 'bike light' to the cart ... passed in 1.191s
-    And User adds item 'bolt t-shirt' to the cart ... passed in 1.183s
-    And User clicks on the cart icon ... passed in 1.181s
-    Then Verify the items in cart ... passed in 0.006s
-    When User clicks on continue button ... passed in 1.178s
-    Then Verify user should be navigated to the checkout page ... passed in 0.006s
+    Given User login as 'standard' user ... passed in 5.225s
+    Then Verify user is on the inventory page ... passed in 0.068s
+    When User adds item 'bike light' to the cart ... passed in 1.218s
+    And User adds item 'bolt t-shirt' to the cart ... passed in 1.217s
+    And User clicks on the cart icon ... passed in 1.256s
+    Then Verify the items in cart ... passed in 0.007s
+    When User clicks on continue button ... passed in 1.237s
+    Then Verify user should be navigated to the checkout page ... passed in 0.007s
 
 @scenario.end
 --------------------------------------------------------------------------------

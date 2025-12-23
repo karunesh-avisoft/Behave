@@ -1,17 +1,17 @@
-<testsuite name="Purchase_order.Successfull Purchase Order Flow" tests="1" errors="0" failures="0" skipped="0" time="15.978707" timestamp="2025-12-23T12:44:57.370340" hostname="DESKTOP-SFTALKM"><testcase classname="Purchase_order.Successfull Purchase Order Flow" name="Verify successful completion of an order purchase" status="passed" time="15.978707"><system-out>
+<testsuite name="Purchase_order.Successfull Purchase Order Flow" tests="1" errors="0" failures="0" skipped="0" time="15.709602" timestamp="2025-12-23T13:59:14.680790" hostname="DESKTOP-SFTALKM"><testcase classname="Purchase_order.Successfull Purchase Order Flow" name="Verify successful completion of an order purchase" status="passed" time="15.709602"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Verify successful completion of an order purchase
-    Given User login as 'standard' user ... passed in 5.457s
-    Then Verify user is on the inventory page ... passed in 0.069s
-    When User adds item 'backpack' to the cart ... passed in 1.216s
-    And User adds item 'fleece jacket' to the cart ... passed in 1.184s
-    And User clicks on the cart icon ... passed in 1.226s
-    And User clicks on continue button ... passed in 1.195s
-    And User fills checkout details with first name:'John', last name:'Doe', and postal code:'12345' ... passed in 3.206s
-    Then User clicks continue from checkout overview page ... passed in 1.216s
-    When User verifies total amount as well as finishes the order ... passed in 1.203s
-    Then Verify user should see the order confirmation page ... passed in 0.007s
+    Given User login as 'standard' user ... passed in 5.142s
+    Then Verify user is on the inventory page ... passed in 0.063s
+    When User adds item 'backpack' to the cart ... passed in 1.194s
+    And User adds item 'fleece jacket' to the cart ... passed in 1.216s
+    And User clicks on the cart icon ... passed in 1.242s
+    And User clicks on continue button ... passed in 1.215s
+    And User fills checkout details with first name:'John', last name:'Doe', and postal code:'12345' ... passed in 3.230s
+    Then User clicks continue from checkout overview page ... passed in 1.200s
+    When User verifies total amount as well as finishes the order ... passed in 1.202s
+    Then Verify user should see the order confirmation page ... passed in 0.006s
 
 @scenario.end
 --------------------------------------------------------------------------------

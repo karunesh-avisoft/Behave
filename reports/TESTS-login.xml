@@ -1,27 +1,27 @@
-<testsuite name="Login.User Login Page" tests="2" errors="0" failures="0" skipped="0" time="11.09368" timestamp="2025-12-23T12:41:34.939410" hostname="DESKTOP-SFTALKM"><testcase classname="Login.User Login Page" name="Verify successful user login with valid username" status="passed" time="5.658967"><system-out>
+<testsuite name="Login.User Login Page" tests="2" errors="0" failures="0" skipped="0" time="11.214102" timestamp="2025-12-23T13:58:58.586206" hostname="DESKTOP-SFTALKM"><testcase classname="Login.User Login Page" name="Verify successful user login with valid username" status="passed" time="5.635118"><system-out>
 <![CDATA[
 @scenario.begin
 
   @valid_login
   Scenario: Verify successful user login with valid username
-    Given User should be on the login page ... passed in 1.627s
-    When User enters 'standard' as username ... passed in 2.502s
-    And User click on the login button ... passed in 1.472s
-    Then Verify user is on the inventory page ... passed in 0.058s
+    Given User should be on the login page ... passed in 1.714s
+    When User enters 'standard' as username ... passed in 2.441s
+    And User click on the login button ... passed in 1.420s
+    Then Verify user is on the inventory page ... passed in 0.061s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="Login.User Login Page" name="Verify unsuccessful user login with incorrect username" status="passed" time="5.434713"><system-out>
+</system-out></testcase><testcase classname="Login.User Login Page" name="Verify unsuccessful user login with incorrect username" status="passed" time="5.578984"><system-out>
 <![CDATA[
 @scenario.begin
 
   @invalid_login
   Scenario: Verify unsuccessful user login with incorrect username
-    Given User should be on the login page ... passed in 1.503s
-    When User enters 'wrongUser' as username ... passed in 2.422s
-    And User click on the login button ... passed in 1.337s
-    Then Verify user should see error 'Epic sadface: Username and password do not match any user in this service' ... passed in 0.173s
+    Given User should be on the login page ... passed in 1.619s
+    When User enters 'wrongUser' as username ... passed in 2.401s
+    And User click on the login button ... passed in 1.381s
+    Then Verify user should see error 'Epic sadface: Username and password do not match any user in this service' ... passed in 0.178s
 
 @scenario.end
 --------------------------------------------------------------------------------
