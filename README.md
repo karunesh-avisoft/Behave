@@ -102,7 +102,6 @@ behave
 ### Run tests on a specific browser
 Use the `-D` flag to pass userdata:
 ```bash
-behave -D browser=chrome
 behave -D browser=firefox
 behave -D browser=edge
 ```
@@ -110,8 +109,14 @@ behave -D browser=edge
 ### Run tests on all supported browsers sequentially
 You can chain commands in a script or manually:
 ```bash
-behave utilities/run_all_browsers.py /features (to run all tests)
-behave utilities/run_all_browsers.py /features/login.feature (to run a particular)
+behave utilities/run_all_browsers.py /features                   #to run all tests
+behave utilities/run_all_browsers.py /features/login.feature     #to run a particular
+```
+
+### Run tests parallely using `behavex`
+You already have installed behavex from requirments file:
+```bash
+behavex --parallel-processes=3 --parallel-scheme=scenario/feature
 ```
 
 For parallel execution across browsers, consider integrating with tools like `pytest-bdd` or cloud platforms (e.g., BrowserStack, LambdaTest, Sauce Labs) by modifying `environment.py` to use remote WebDriver.
@@ -127,7 +132,7 @@ behave features/login.feature
 Behave supports formatted output:
 ```bash
 behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results
-behave serve reports/allure-results  # Generates report to a temp directory and start a web server
+behave serve reports/allure-results                     # Generates report to a temp directory and start a web server
 ```
 
 For HTML reports, install `behave-html-formatter`:
