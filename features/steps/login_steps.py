@@ -1,6 +1,6 @@
 from behave import given, when, then
 from playwright.sync_api import sync_playwright
-from pages.LoginPage import LoginPage
+from pages.Login_page import LoginPage
 
 
 @given("User login as '{username}' user")
